@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satluj Solar | Premium Energy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --solar-blue: #0056b3;
+            --solar-orange: #f39c12;
+            --light-bg: #ffffff;
+            --text-dark: #1a1a1a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+
+        body { background: var(--light-bg); color: var(--text-dark); overflow-x: hidden; }
+
+        /* --- Custom Navbar --- */
+        .nav-wrapper {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .logo-box img { height: 60px; object-fit: contain; }
+
+        .nav-links { display: flex; gap: 40px; list-style: none; }
+        .nav-links a { 
+            text-decoration: none; color: var(--text-dark); 
+            font-weight: 600; font-size: 15px; transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--solar-blue); }
+
+        /* --- Hero Section (Unique Grid) --- */
+        .hero-container {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            padding: 0 8%;
+            padding-top: 80px;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1;
+            color: var(--solar-blue);
+            margin-bottom: 25px;
+        }
+
+        .hero-text h1 span { color: var(--solar-orange); }
+
+        .hero-text p {
+            font-size: 18px; color: #555;
+            max-width: 500px; margin-bottom: 35px;
+            border-left: 4px solid var(--solar-orange);
+            padding-left: 20px;
+        }
+
+        /* Hero Image with Abstract Shape */
+        .hero-image-box {
+            position: relative;
+            height: 80%;
+            background: url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2058&auto=format&fit=crop') center/cover;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Unique Organic Shape */
+            animation: morph 8s ease-in-out infinite;
+            border: 10px solid #f8f8f8;
+        }
+
+        @keyframes morph {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        }
+
+        /* --- Mobile Responsive Fixes --- */
+        .menu-toggle { display: none; font-size: 25px; cursor: pointer; }
+
+        @media (max-width: 991px) {
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
+            .hero-text p { margin: 0 auto 35px; text-align: left; }
+            .nav-links { display: none; } /* Hide for mobile toggle */
+            .menu-toggle { display: block; }
+            .hero-image-box { height: 40vh; margin-top: 30px; }
+            .hero-text h1 { font-size: 3rem; }
+        }
+
+        /* --- Unique Floating Action --- */
+        .solar-tracker {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            width: 60px; height: 60px;
+            background: var(--solar-orange);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            box-shadow: 0 10px 20px rgba(243, 156, 18, 0.3);
+            z-index: 999;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .cta-main {
+    /* Padding ke sath width control karo */
+    padding: 15px 40px; 
+    
+    /* Margin ke bajaye block display ya flex use karo */
+    display: inline-block;
+    
+    background: var(--solar-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    
+    /* Agar button ko center mein lana hai toh margin-left hata kar ye use karo: */
+    /* margin: 0 auto; */
+}
+        .cta-main:hover { background: var(--solar-orange); transform: translateY(-3px); }
+/* --- Modernized Navbar --- */
+.nav-wrapper {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    z-index: 2000;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    height: 70px; /* Fixed height for consistency */
+}
+
+.logo-box img { height: 45px; object-fit: contain; }
+
+.nav-links { display: flex; gap: 30px; list-style: none; }
+.nav-links a { 
+    text-decoration: none; color: var(--text-dark); 
+    font-weight: 600; font-size: 15px; transition: 0.3s;
+}
+
+/* --- Mobile Menu Fixes --- */
+.menu-toggle { 
+    display: none; 
+    font-size: 24px; 
+    color: var(--solar-blue); 
+    cursor: pointer; 
+}
+
+@media (max-width: 991px) {
+    .nav-wrapper { padding: 10px 4%; }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px; left: -100%; /* Hidden by default */
+        width: 100%; height: auto;
+        background: white;
+        flex-direction: column;
+        padding: 30px;
+        gap: 20px;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        border-bottom: 3px solid var(--solar-orange);
+    }
+
+    .nav-links.active { left: 0; } /* Slide in effect */
+
+    .menu-toggle { display: block; }
+
+    .nav-actions .cta-main {
+        padding: 8px 15px;
+        font-size: 12px;
+        display: none; /* Mobile par hide kar rahe hain taake clutter na ho */
+    }
+
+    /* Hero Section Fix for Mobile */
+    .hero-container {
+        grid-template-columns: 1fr;
+        padding-top: 100px; /* Push content below fixed nav */
+        height: auto;
+        min-height: 100vh;
+        text-align: center;
+    }
+
+    .hero-text h1 { font-size: 2.5rem; margin-top: 20px; }
+    .hero-image-box { 
+        height: 350px; 
+        width: 100%; 
+        margin-top: 30px; 
+        border-radius: 40px !important; /* Simple rounded for mobile */
+    }
+}
+    </style>
+</head>
+<body>
+
+    <nav class="nav-wrapper">
+    <div class="logo-box">
+        <img src="./logo.png" alt="Satluj Solar">
+    </div>
+    
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#solutions">Smart Solutions</a></li>
+        <li><a href="#tech">Our Tech</a></li>
+        <li><a href="#savings">Savings</a></li>
+     </ul>
+
+    <div class="nav-actions">
+        <i class="fas fa-bars menu-toggle" id="menuBtn"></i>
+    </div>
+</nav>
+
+    <section class="hero-container">
+        <div class="hero-text">
+            <h1>Harness The <span>Sun</span> To Power Your Life</h1>
+            <p>At Satluj Solar, we don't just sell panels; we design energy independence for homes and businesses with zero-maintenance technology.</p>
+            <button class="cta-main">Get Started <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div class="hero-image-box">
+            </div>
+    </section>
+
+ <div class="solar-action-hub" id="actionHub">
+    <div class="main-fab" id="mainFab" onclick="toggleHub()">
+        <i class="fas fa-sun" id="fabIcon"></i>
+    </div>
+    
+    <div class="fab-options" id="fabOptions">
+        <a href="https://wa.me/+923336309280" class="fab-btn whatsapp" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:info@satlujsolar.com" class="fab-btn email" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+</div>
+
+<style>
+    .solar-action-hub {
+        position: fixed;
+        bottom: 30px; right: 30px;
+        display: flex;
+        flex-direction: column-reverse; /* Buttons upar nikalne ke liye */
+        align-items: center;
+        gap: 15px;
+        z-index: 9999;
+    }
+
+    .main-fab {
+        width: 60px; height: 60px;
+        background: var(--solar-orange);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 24px;
+        box-shadow: 0 10px 20px rgba(243, 156, 18, 0.4);
+        /* Rotation & Smooth Bounce Animation */
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .main-fab.rotate {
+        transform: rotate(180deg);
+        background: var(--solar-blue);
+    }
+
+    .fab-options {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        transition: all 0.4s ease;
+    }
+
+    .fab-options.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .fab-btn {
+        width: 50px; height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+    .fab-btn:hover { transform: scale(1.1); }
+    .whatsapp { background: #25d366; }
+    .email { background: #0056b3; }
+</style>
+
+<script>
+    function toggleHub() {
+        const options = document.getElementById('fabOptions');
+        const mainFab = document.getElementById('mainFab');
+        
+        // Toggle active class
+        options.classList.toggle('active');
+        mainFab.classList.toggle('rotate');
+    }
+
+    // Close when clicking outside
+    window.addEventListener('click', (e) => {
+        const hub = document.getElementById('actionHub');
+        if (!hub.contains(e.target)) {
+            document.getElementById('fabOptions').classList.remove('active');
+            document.getElementById('mainFab').classList.remove('rotate');
+        }
+    });
+</script>
+
+    <script>
+        // Scroll interaction for the organic shape
+        window.addEventListener('scroll', () => {
+            const shape = document.querySelector('.hero-image-box');
+            let value = window.scrollY;
+            shape.style.transform = `rotate(${value * 0.05}deg)`;
+        });
+
+       
+        const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    // Icon change from bars to times (X)
+    menuBtn.classList.toggle('fa-bars');
+    menuBtn.classList.toggle('fa-times');
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuBtn.classList.add('fa-bars');
+        menuBtn.classList.remove('fa-times');
+    });
+});
+
+// Scroll Interaction for Hero Image
+window.addEventListener('scroll', () => {
+    const shape = document.querySelector('.hero-image-box');
+    if (shape) {
+        let value = window.scrollY;
+        shape.style.transform = `rotate(${value * 0.05}deg)`;
+    }
+});
+    </script>
+
+    <!--solution-->
+    <section class="products-section" id="solutions">
+    <div class="section-header">
+        <span class="badge">Our Catalog</span>
+        <h2>High-Efficiency <span>Solar Gear</span></h2>
+        <p>Direct from Satluj Solar’s premium inventory. Engineered for the Pakistani climate.</p>
+    </div>
+
+    <div class="product-grid">
+        <div class="p-card">
+            <div class="p-icon"><i class="fas fa-solar-panel"></i></div>
+            <h3>Monocrystalline Panels</h3>
+            <p>Tier-1 technology with 22% efficiency. Works even in low light.</p>
+            <div class="p-specs">
+                <span><i class="fas fa-bolt"></i> 550W+</span>
+                <span><i class="fas fa-shield-alt"></i> 25Y Warranty</span>
+            </div>
+            <button class="p-btn">View Details</button>
+        </div>
+
+        <div class="p-card featured">
+            <div class="p-icon"><i class="fas fa-car-battery"></i></div>
+            <h3>Hybrid Inverters</h3>
+            <p>Smart switching between Solar, Battery, and Grid. Pure Sine Wave.</p>
+            <div class="p-specs">
+                <span><i class="fas fa-microchip"></i> AI Powered</span>
+                <span><i class="fas fa-mobile-alt"></i> App Control</span>
+            </div>
+            <button class="p-btn">View Details</button>
+        </div>
+
+        <div class="p-card">
+            <div class="p-icon"><i class="fas fa-plug"></i></div>
+            <h3>Lithium Storage</h3>
+            <p>High-density energy storage for 24/7 power backup. Zero maintenance.</p>
+            <div class="p-specs">
+                <span><i class="fas fa-recycle"></i> 6000+ Cycles</span>
+                <span><i class="fas fa-thermometer-half"></i> Cool Tech</span>
+            </div>
+            <button class="p-btn">View Details</button>
+        </div>
+    </div>
+</section>
+<style>
+    .products-section {
+    padding: 100px 8%;
+    background: #fcfcfc;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.badge {
+    background: rgba(243, 156, 18, 0.1);
+    color: var(--solar-orange);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    margin-top: 10px;
+    color: var(--solar-blue);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.p-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.p-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+    border-color: var(--solar-orange);
+}
+
+.p-icon {
+    font-size: 40px;
+    color: var(--solar-orange);
+    margin-bottom: 20px;
+}
+
+.p-card h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.p-card p {
+    color: #777;
+    font-size: 15px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.p-specs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.p-specs span {
+    font-size: 12px;
+    font-weight: 700;
+    background: #f8f8f8;
+    padding: 5px 12px;
+    border-radius: 5px;
+    color: var(--solar-blue);
+}
+
+.p-btn {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--solar-blue);
+    background: transparent;
+    color: var(--solar-blue);
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.p-card:hover .p-btn {
+    background: var(--solar-blue);
+    color: white;
+}
+
+/* Featured Card Style */
+.featured {
+    border-top: 5px solid var(--solar-orange);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .section-header h2 { font-size: 2.2rem; }
+    .p-card { padding: 30px; }
+}
+</style>
+
+<!--savinggggggg-->
+
+<section class="calculator-section" id="savings">
+    <div class="calc-container">
+        <div class="calc-text">
+            <span class="badge">ROI Tracker</span>
+            <h2>Stop Paying <span>High Bills</span></h2>
+            <p>Enter your average monthly electricity units, and see how much you can save with Satluj Solar panels.</p>
+            
+            <div class="input-group-custom">
+                <label>Monthly Units (kWh)</label>
+                <input type="number" id="unitInput" placeholder="e.g. 500" oninput="calculateSavings()">
+            </div>
+        </div>
+
+        <div class="calc-result-box">
+            <div class="result-item">
+                <p>Estimated Monthly Saving</p>
+                <h3 id="monthlySave">Rs. 0</h3>
+            </div>
+            <div class="result-item highlight">
+                <p>Estimated Yearly Saving</p>
+                <h3 id="yearlySave">Rs. 0</h3>
+            </div>
+            <button class="cta-main w-100 mt-3">Book Installation Now</button>
+        </div>
+    </div>
+</section>
+<style>
+    .calculator-section {
+    padding: 80px 8%;
+    background: white;
+}
+
+.calc-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    background: #fdfdfd;
+    padding: 60px;
+    border-radius: 30px;
+    border: 1px solid #f0f0f0;
+    align-items: center;
+}
+
+.input-group-custom {
+    margin-top: 30px;
+}
+
+.input-group-custom label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--solar-blue);
+}
+
+.input-group-custom input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 18px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group-custom input:focus {
+    border-color: var(--solar-orange);
+}
+
+.calc-result-box {
+    background: var(--solar-blue);
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+}
+
+.result-item {
+    margin-bottom: 30px;
+}
+
+.result-item p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.result-item h3 {
+    font-size: 2.5rem;
+    color: var(--solar-orange);
+}
+
+.result-item.highlight h3 {
+    color: #fff;
+    font-size: 3rem;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991px) {
+    .calc-container {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+    .calc-result-box {
+        margin-top: 20px;
+    }
+}
+</style>
+
+<!--gallary-->
+
+<section class="gallery-section">
+    <div class="gallery-header">
+        <span class="badge">Success Stories</span>
+        <h2>Powering <span>Pakistan's</span> Industry</h2>
+    </div>
+    
+    <div class="project-grid-heavy">
+        <div class="project-item">
+            <img src="https://images.unsplash.com/photo-1466611653911-95282fc3656b?auto=format&fit=crop&q=80" alt="Industrial Project">
+            <div class="project-overlay">
+                <h4>Industrial Power Plant</h4>
+                <p>1.2 MW Solar Farm - Lahore</p>
+            </div>
+        </div>
+        <div class="project-item">
+            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80" alt="Residential Project">
+            <div class="project-overlay">
+                <h4>Residential Smart Home</h4>
+                <p>15 kW Hybrid System - Islamabad</p>
+            </div>
+        </div>
+        <div class="project-item">
+            <img src="https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&q=80" alt="Commercial Project">
+            <div class="project-overlay">
+                <h4>Commercial Plaza</h4>
+                <p>100 kW Net Metering - Karachi</p>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    /* --- Projects Gallery Styles --- */
+.gallery-section { padding: 100px 5%; background: #fff; }
+.gallery-header { text-align: left; margin-bottom: 50px; }
+
+.project-grid-heavy {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 30px;
+    scrollbar-width: thin;
+}
+
+.project-item {
+    min-width: 400px;
+    height: 500px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.project-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: 0.5s;
+}
+
+.project-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 40px;
+    background: linear-gradient(transparent, rgba(0,86,179,0.9));
+    color: white;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.project-item:hover .project-overlay { transform: translateY(0); opacity: 1; }
+.project-item:hover img { transform: scale(1.1); }
+
+/* --- Footer Styles --- */
+.main-footer {
+    background: #f8f9fa;
+    padding: 80px 8% 20px;
+    border-top: 1px solid #eee;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-logo { height: 70px; margin-bottom: 25px; filter: grayscale(1); opacity: 0.7; }
+.footer-logo:hover { filter: none; opacity: 1; }
+
+.footer-brand p { color: #666; line-height: 1.8; margin-bottom: 20px; }
+
+.footer-links h4, .footer-contact h4 {
+    color: var(--solar-blue);
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.footer-links ul { list-style: none; }
+.footer-links ul li { margin-bottom: 12px; }
+.footer-links ul li a { text-decoration: none; color: #555; transition: 0.3s; }
+.footer-links ul li a:hover { color: var(--solar-orange); padding-left: 5px; }
+
+.footer-contact p { margin-bottom: 15px; color: #555; }
+.footer-contact i { color: var(--solar-orange); margin-right: 10px; }
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+    color: #999;
+    font-size: 13px;
+}
+
+/* --- Mobile Fix for Heavy Gallery --- */
+@media (max-width: 768px) {
+    .project-item { min-width: 300px; height: 400px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+</style>
+<!--process-->
+
+<section class="process-section" id="process">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="badge">How it Works</span>
+            <h2>Your Journey to <span>Zero Bills</span></h2>
+            <p>From the first call to the final flip of the switch—we handle everything.</p>
+        </div>
+
+        <div class="roadmap">
+            <div class="roadmap-item">
+                <div class="road-icon">01</div>
+                <div class="road-content">
+                    <h4>Site Survey & Audit</h4>
+                    <p>Our engineers visit your location to analyze roof strength, shadow patterns, and your energy load requirements.</p>
+                </div>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="road-icon">02</div>
+                <div class="road-content">
+                    <h4>Customized Design</h4>
+                    <p>We create a 3D layout of your solar plant using AI tools to ensure maximum sun exposure and aesthetics.</p>
+                </div>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="road-icon">03</div>
+                <div class="road-content">
+                    <h4>Precision Installation</h4>
+                    <p>Our certified team installs Tier-1 panels and smart inverters with international safety standards.</p>
+                </div>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="road-icon">04</div>
+                <div class="road-content">
+                    <h4>Net Metering & Go-Live</h4>
+                    <p>We handle the legal paperwork for Net Metering, so you can start selling excess electricity back to the grid.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    .process-section {
+    padding: 100px 8%;
+    background: #ffffff;
+    position: relative;
+}
+
+.roadmap {
+    position: relative;
+    max-width: 900px;
+    margin: 50px auto 0;
+}
+
+/* Central Line */
+.roadmap::before {
+    content: '';
+    position: absolute;
+    left: 31px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--solar-blue), var(--solar-orange), transparent);
+    border-radius: 10px;
+}
+
+.roadmap-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 60px;
+    position: relative;
+    transition: 0.4s ease;
+}
+
+.road-icon {
+    width: 65px;
+    height: 65px;
+    background: white;
+    border: 4px solid var(--solar-blue);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    color: var(--solar-blue);
+    z-index: 2;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+.roadmap-item:hover .road-icon {
+    background: var(--solar-orange);
+    border-color: var(--solar-orange);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(243, 156, 18, 0.4);
+}
+
+.road-content {
+    background: #fdfdfd;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    width: 100%;
+}
+
+.road-content h4 {
+    color: var(--solar-blue);
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.road-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Desktop par Alternating Side (Optional - if you want it even heavier) */
+@media (min-width: 992px) {
+    /* Agar aap mazeed complexity chahte hain toh batayen, warna ye clean aur effective hai */
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+    .roadmap-item { gap: 20px; }
+    .road-icon { min-width: 50px; height: 50px; font-size: 16px; }
+    .roadmap::before { left: 23px; }
+}
+</style>
+<!--impact-->
+<section class="impact-section">
+    <div class="stats-grid">
+        <div class="stat-item">
+            <h2 class="counter" data-target="500">0</h2>
+            <p>Homes Powered</p>
+        </div>
+        <div class="stat-item">
+            <h2 class="counter" data-target="15">0</h2>
+            <p>MW Installed</p>
+        </div>
+        <div class="stat-item">
+            <h2 class="counter" data-target="98">0</h2>
+            <span>%</span>
+            <p>Happy Clients</p>
+        </div>
+    </div>
+
+    <div class="testimonial-container">
+        <div class="testimonial-header text-center">
+            <span class="badge">Voices of Trust</span>
+            <h2>What Our <span>Partners</span> Say</h2>
+        </div>
+
+        <div class="testimonial-slider">
+            <div class="t-card">
+                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                <p>"Satluj Solar transformed our factory's energy cost. Our bill went from 4 Lacs to almost zero in 3 months!"</p>
+                <div class="t-user">
+                    <div class="t-info">
+                        <strong>M. Ahmed</strong>
+                        <span>Textile Owner, Lahore</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="t-card featured-t">
+                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                <p>"Best decision for my home. The net metering process was so smooth. Highly recommended team!"</p>
+                <div class="t-user">
+                    <div class="t-info">
+                        <strong>Sarah Khan</strong>
+                        <span>Homeowner, DHA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    .impact-section {
+    padding: 100px 8%;
+    background: linear-gradient(to bottom, #ffffff, #f8faff);
+}
+
+/* Stats Styling */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.stat-item h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: var(--solar-blue);
+    font-weight: 800;
+}
+
+.stat-item p {
+    color: var(--solar-orange);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Testimonials Styling */
+.testimonial-slider {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    overflow-x: auto;
+    padding: 20px 10px;
+    scrollbar-width: none; /* Hide scrollbar */
+}
+
+.t-card {
+    min-width: 350px;
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid #eee;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    position: relative;
+    transition: 0.3s;
+}
+
+.featured-t {
+    border: 2px solid var(--solar-orange);
+    transform: scale(1.05);
+}
+
+.quote-icon {
+    position: absolute;
+    top: -20px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background: var(--solar-orange);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.t-card p {
+    font-style: italic;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.t-info strong {
+    display: block;
+    color: var(--solar-blue);
+    font-size: 18px;
+}
+
+.t-info span {
+    color: #888;
+    font-size: 13px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .stats-grid { grid-template-columns: 1fr; gap: 40px; }
+    .testimonial-slider { flex-direction: column; }
+    .t-card { min-width: 100%; }
+    .featured-t { transform: scale(1); margin: 20px 0; }
+}
+</style>
+<!--CTA-->
+<section class="final-cta-section">
+    <div class="cta-glass-box">
+        <div class="cta-content">
+            <span class="live-status"><span class="dot"></span> Open for Bookings</span>
+            <h2>Ready to Power Your <span>Home for Free?</span></h2>
+            <p>Join 500+ families in Pakistan who have already switched to Satluj Solar. Get a customized quote within 24 hours.</p>
+            
+            <div class="cta-button-group">
+                <a href="https://wa.me/+923336309280" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+                <button class="btn-call-now">
+                    <i class="fas fa-phone-alt"></i> Call 0333 6309280
+                </button>
+            </div>
+        </div>
+        
+        <div class="cta-visual">
+            <i class="fas fa-solar-panel"></i>
+        </div>
+    </div>
+</section>
+<style>.final-cta-section {
+    padding: 100px 8%;
+    background: #fff;
+}
+
+.cta-glass-box {
+    background: var(--solar-blue);
+    border-radius: 40px;
+    padding: 80px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 20px 40px rgba(0, 86, 179, 0.2);
+}
+
+.cta-content {
+    max-width: 600px;
+    z-index: 2;
+}
+
+.live-status {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.dot {
+    width: 8px; height: 8px;
+    background: #2ecc71;
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.cta-content h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.cta-content h2 span { color: var(--solar-orange); }
+
+.cta-content p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+/* Button Grouping */
+.cta-button-group {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-whatsapp {
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 18px 35px;
+    border-radius: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.btn-call-now {
+    background: white;
+    color: var(--solar-blue);
+    border: none;
+    padding: 18px 35px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-whatsapp:hover, .btn-call-now:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.cta-visual {
+    font-size: 200px;
+    opacity: 0.1;
+    position: absolute;
+    right: -20px;
+    bottom: -50px;
+    transform: rotate(-15deg);
+}
+
+/* --- MOBILE RESPONSIVE FIX --- */
+@media (max-width: 768px) {
+    .final-cta-section {
+        padding: 40px 5%;
+    }
+    
+    .cta-glass-box {
+        padding: 50px 30px;
+        border-radius: 25px;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .cta-content {
+        max-width: 100%;
+    }
+
+    .cta-button-group {
+        flex-direction: column; /* Buttons stack vertically on mobile */
+        gap: 15px;
+    }
+
+    .btn-whatsapp, .btn-call-now {
+        width: 100%; /* Full width buttons for easy tapping */
+        justify-content: center;
+    }
+
+    .cta-visual {
+        display: none; /* Hide heavy icons on mobile */
+    }
+}</style>
+
+<!--footer-->
+<footer class="site-footer">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h3>Satluj Solar</h3>
+            <p>Pioneering renewable energy in Pakistan. We provide Tier-1 solar solutions with a focus on long-term efficiency and zero-maintenance architecture.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#solutions">Solar Systems</a></li>
+                <li><a href="#savings">Savings Calculator</a></li>
+                <li><a href="#">Contact Support</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Visit Our Office</h4>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d532.4452158685168!2d73.25480289677647!3d29.999267575226565!3m2!1i1024!2i768!4f13.1!2m1!1sBahawalnagar!5e0!3m2!1sen!2s!4v1773212307287!5m2!1sen!2s" 
+                width="100%" height="150" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <p class="mt-2"><i class="fas fa-map-marker-alt"></i> Office 42, Solar Market, Multan</p>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2026 Satluj Solar. All Rights Reserved.</p>
+    </div>
+</footer>
+<style>
+    .site-footer {
+    background: #111;
+    color: #fff;
+    padding: 80px 8% 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer-col h3, .footer-col h4 { margin-bottom: 20px; color: var(--solar-orange); }
+.footer-col p { color: #aaa; line-height: 1.6; }
+
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { color: #aaa; text-decoration: none; transition: 0.3s; }
+.footer-col ul li a:hover { color: #fff; }
+
+.map-container { margin-bottom: 10px; overflow: hidden; }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .site-footer { padding: 40px 5%; }
+}
+</style>
+</body>
+</html>
+
+
